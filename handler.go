@@ -217,3 +217,8 @@ func wsHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}()
 }
+
+func serviceStatusHandler(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("ok"))
+}
+

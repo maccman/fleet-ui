@@ -61,6 +61,9 @@ func main() {
 	// routing websocket
 	r.Path("/ws/journal/{id}").HandlerFunc(wsHandler)
 
+	// status check
+	r.Path("/v1/status/fleetui").HandlerFunc(serviceStatusHandler)
+
 	n := negroni.Classic()
 	n.UseHandler(r)
 
